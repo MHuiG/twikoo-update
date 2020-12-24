@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js 10.x
+        uses: actions/setup-node@master
+        with:
+         node-version: "10.x"
+      - name: Run
+        run: |
+          git clone https://github.com/imaegoo/twikoo.git
+          npm i -g @cloudbase/cli
+          tcb login --apiKeyId "${{ secrets.SECRETID }}" --apiKey "${{ secrets.SECRETKEY }}"
+          tcb fn deploy "${{ secrets.TCBFUNNAME }}" -e "${{ secrets.TCBENVID }}" --force --dir ./twikoo/src/function/twikoo
