@@ -10,7 +10,7 @@ $.ajax({
 	 dataType: "json",
 	 success: function(data){
 		console.log(data.devDependencies.twikoo)
-    loadScript('https://cdn.jsdelivr.net/npm/twikoo@'+data.devDependencies.twikoo)
+		loadScript('https://cdn.jsdelivr.net/npm/twikoo@'+data.devDependencies.twikoo)
 	}
 });
 
