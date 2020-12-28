@@ -20,3 +20,4 @@ jobs:
           npm i -g @cloudbase/cli
           tcb login --apiKeyId "${{ secrets.SECRETID }}" --apiKey "${{ secrets.SECRETKEY }}"
           tcb fn deploy "${{ secrets.TCBFUNNAME }}" -e "${{ secrets.TCBENVID }}" --force --dir ./twikoo/src/function/twikoo
+          curl https://purge.jsdelivr.net/gh/MHuiG/twikoo-update@main/package.json
