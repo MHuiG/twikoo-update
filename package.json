@@ -2,6 +2,6 @@
   "name": "test",
   "version": "0.0.0",
   "devDependencies": {
-    "twikoo": "1.1.2-beta"
+    "twikoo": "1.1.3-beta"
   }
 }
